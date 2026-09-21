@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>after.6 — Your time starts here.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f4f0e8;color:#1d241e;line-height:1.5}
+nav{position:fixed;top:0;left:0;width:100%;z-index:10;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(244,240,232,.82);backdrop-filter:blur(12px)}
+.logo{font-size:25px;font-weight:700;letter-spacing:-1.5px}
+.logo span{font-weight:400}
+nav a{color:inherit;text-decoration:none;margin-left:28px;font-size:14px}
+.menu-link{position:relative}
+.hero{min-height:100vh;padding:150px 7% 70px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:#c7d0b8;right:-180px;top:130px;filter:blur(2px);opacity:.65}
+.hero-content{max-width:850px;position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:11px;font-weight:600;margin-bottom:24px;opacity:.65}
+h1{font-family:'Playfair Display',serif;font-size:clamp(68px,12vw,150px);line-height:.86;letter-spacing:-6px;font-weight:500}
+h1 em{font-style:normal;color:#68745e}
+.tagline{font-size:clamp(18px,2.2vw,26px);max-width:560px;margin:34px 0 35px;color:#4c544b}
+.cta{display:inline-flex;padding:15px 24px;border-radius:40px;background:#1d241e;color:#fff;text-decoration:none;font-size:14px;transition:.25s}
+.cta:hover{transform:translateY(-3px)}
+.intro{padding:110px 7%;display:grid;grid-template-columns:1fr 1.2fr;gap:8%;background:#1d241e;color:#f4f0e8}
+.intro h2{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,76px);font-weight:500;line-height:1}
+.intro p{font-size:20px;max-width:620px;color:#cfd4ca;align-self:end}
+.manifesto{padding:110px 7%;text-align:center}
+.manifesto .small{font-size:12px;letter-spacing:3px;text-transform:uppercase;opacity:.55}
+.manifesto h2{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,90px);font-weight:500;line-height:1.02;max-width:1000px;margin:28px auto}
+.manifesto h2 span{color:#7b876e}
+.cards{padding:0 7% 110px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{min-height:310px;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:#dfe3d7}
+.card:nth-child(2){background:#ded4c3}
+.card:nth-child(3){background:#cdd8d1}
+.card .num{font-size:12px;opacity:.5}
+.card h3{font-family:'Playfair Display',serif;font-size:35px;font-weight:500}
+.card p{font-size:14px;max-width:270px;opacity:.72}
+.services{padding:95px 7% 110px;background:#ece8df}
+.services-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}
+.services-head .eyebrow{margin-bottom:10px}
+.services-head h2{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,72px);font-weight:500;line-height:.95}
+.services-intro{max-width:330px;font-size:14px;opacity:.65}
+.service-list{border-top:1px solid #bdbbb0}
+.service-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:25px;padding:27px 0;border-bottom:1px solid #bdbbb0;transition:.25s}
+.service-row:hover{padding-left:12px}
+.service-num{font-size:11px;opacity:.5}
+.service-name{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,52px)}
+.service-arrow{font-size:22px;opacity:.55}
+.coming{margin:0 7% 70px;border-radius:30px;padding:80px 30px;text-align:center;background:#68745e;color:#f7f5ef}
+.social-footer{padding:0 7% 45px;text-align:center}
+.social-footer h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;margin-bottom:10px}
+.social-footer p{font-size:13px;opacity:.6;margin-bottom:20px}
+.social-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.social-links a{color:#1d241e;text-decoration:none;border:1px solid #bbb9ae;border-radius:30px;padding:11px 18px;font-size:13px;transition:.2s}
+.social-links a:hover{background:#1d241e;color:#fff}
+.coming .eyebrow{opacity:.8}
+.coming h2{font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,100px);font-weight:500;line-height:.9;margin-bottom:28px}
+.coming p{max-width:470px;margin:auto;color:#e5e8df}
+footer{padding:35px 7%;display:flex;justify-content:space-between;border-top:1px solid #c8c8bd;font-size:13px;opacity:.7}
+@media(max-width:760px){
+ nav{padding:18px 5%} nav div:last-child{display:none}
+ .hero{padding:130px 7% 70px;min-height:90vh}
+ h1{letter-spacing:-3px}
+ .intro{grid-template-columns:1fr;padding:80px 7%;gap:35px}
+ .intro p{font-size:17px}
+ .cards{grid-template-columns:1fr;padding-bottom:75px}
+ .services{padding:75px 7% 85px}
+ .services-head{display:block}
+ .services-intro{margin-top:25px}
+ .service-row{grid-template-columns:42px 1fr auto;padding:22px 0}
+ .service-row:hover{padding-left:0}
+ .card{min-height:250px}
+ .coming{margin:0 5% 70px;padding:65px 20px}
+ footer{padding:28px 5%;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">after<span>.6</span></div>
+  <div>
+    <a href="#about">about</a>
+    <a href="#mood">the mood</a>
+    <a href="#soon">coming soon</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">for everything after work</div>
+    <h1>after<span>.6</span></h1>
+    <p class="tagline">6 PM isn't the end of your day.<br>It's when your time finally starts.</p>
+    <a class="cta" href="#about">enter after.6 ↓</a>
+  </div>
+</section>
+
+<section class="intro" id="about">
+  <h2>Your day doesn't end at 6.</h2>
+  <p>
+    after.6 is a space for the part of your life that belongs to you.
+    The plans, the people, the little rituals, the spontaneous nights,
+    and everything you choose to do when work is finally over.
+  </p>
+</section>
+
+<section class="manifesto" id="mood">
+  <div class="small">the after.6 mindset</div>
+  <h2>Clock out.<br><span>Come alive.</span></h2>
+</section>
+
+<section class="cards">
+  <article class="card">
+    <div class="num">01 / YOUR TIME</div>
+    <div>
+      <h3>Unplug.</h3>
+      <p>Leave the meetings, emails and deadlines where they belong.</p>
+    </div>
+  </article>
+  <article class="card">
+    <div class="num">02 / YOUR PEOPLE</div>
+    <div>
+      <h3>Go out.</h3>
+      <p>Meet your people. Discover somewhere new. Make a plan.</p>
+    </div>
+  </article>
+  <article class="card">
+    <div class="num">03 / YOUR MOOD</div>
+    <div>
+      <h3>Be you.</h3>
+      <p>Because the best part of the day might just start after 6.</p>
+    </div>
+  </article>
+</section>
+
+<section class="services" id="things">
+  <div class="services-head">
+    <div>
+      <div class="eyebrow">what you'll find here</div>
+      <h2>Your after.6<br>things.</h2>
+    </div>
+    <p class="services-intro">Little things made for the hours that belong to you — pick your mood, take your time.</p>
+  </div>
+  <div class="service-list">
+    <a class="service-row" href="#plants" style="text-decoration:none;color:inherit">
+      <span class="service-num">01</span><span class="service-name">Plants</span><span class="service-arrow">↗</span>
+    </a>
+    <a class="service-row" href="#art" style="text-decoration:none;color:inherit">
+      <span class="service-num">02</span><span class="service-name">Art</span><span class="service-arrow">↗</span>
+    </a>
+    <a class="service-row" href="#me-time" style="text-decoration:none;color:inherit">
+      <span class="service-num">03</span><span class="service-name">Me time</span><span class="service-arrow">↗</span>
+    </a>
+    <a class="service-row" href="#books" style="text-decoration:none;color:inherit">
+      <span class="service-num">04</span><span class="service-name">For book lovers</span><span class="service-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="coming" id="soon">
+  <div class="eyebrow">something is coming</div>
+  <h2>See you<br>after.6</h2>
+  <p>We're building something for the hours that are actually yours.</p>
+</section>
+
+<section class="social-footer">
+  <h3>Stay after.6 with us.</h3>
+  <p>Follow the mood, discover what's next, and don't clock out too early.</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/after6.eg?stkn=NTN5Y3E3d214aW9k" target="_blank" rel="noopener">Instagram · @after6.eg</a>
+    <a href="https://www.tiktok.com/@after.6" target="_blank" rel="noopener">TikTok · @after.6</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 after.6</div>
+  <div>your time. your rules.</div>
+</footer>
+
+</body>
+</html>
